@@ -1,3 +1,3 @@
 # richeyphu.github.io
 
-### Welcome to my GitHub Page
+### Welcome to my GitHub Pages!
