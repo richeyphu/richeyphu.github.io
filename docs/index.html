@@ -3,7 +3,7 @@
 
 <head>
 
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
 
   <title>AkaraSellegg - GitHub Pages</title>
 
@@ -27,6 +27,9 @@
 
   <!-- Font Awesome CSS -->
   <script src="https://kit.fontawesome.com/0c5e293210.js" crossorigin="anonymous"></script>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -78,9 +81,14 @@
 
   <div id="particles-js" class="hero-image">
     <div class="hero-text">
-      <p>Hello World!</p>
-      <p>สวัสดีชาวโลก</p>
-      <a href="https://github.com/richeyphu/" target="_blank" class="btn btn-outline-light"><big><i class="fab fa-github"></i> AkaraSellegg</big></a>
+      <p data-aos="fade-up" data-aos-duration="1000" data-aos-offset="-100">Hello World!</p>
+      <p data-aos="fade-up" data-aos-duration="1500" data-aos-offset="-200">สวัสดีชาวโลก</p>
+      <a href="https://github.com/richeyphu/" target="_blank" class="btn btn-outline-light" data-aos="fade-up"
+        data-aos-duration="2500" data-aos-offset="-300">
+        <big>
+          <i class="fab fa-github"></i> AkaraSellegg
+        </big>
+      </a>
     </div>
   </div>
 
@@ -89,9 +97,13 @@
   <!-- Body section starts here -->
 
   <div class="container-fluid">
-    <div class="row bg-secondary" style="height: 300px;">
+    <div class="row bg-secondary" style="height: 500px;">
       <div class="text-light text-center my-auto">
-        <h1>Hello Github Pages</h1>
+        <div id="slideshow" data-aos="zoom-in">
+          <h1 class="slideshow-element">Hello GitHub Pages</h1>
+          <h1 class="slideshow-element">สวัสดีกิตฮับเพจส์</h1>
+          <h1 class="slideshow-element">こんにちは「ギットハブページ」</h1>
+        </div>
       </div>
     </div>
   </div>
@@ -103,7 +115,7 @@
   <footer class="container-fluid text-center">
 
     <div class="row bg-dark h-auto">
-      <div class="text-light text-center my-auto mt-3">
+      <div class="text-light text-center my-auto mt-3" data-aos="fade-up" data-aos-offset="-50">
         <a onClick="topFunction()" class="btn text-light">
           <!-- <i class="bi bi-arrow-bar-up"></i><br> -->
           <i class="fas fa-chevron-up"></i><br>
@@ -112,14 +124,16 @@
       </div>
 
       <div class="mt-3 mb-4">
-        <big>
-          <a href="https://github.com/richeyphu/" target="_blank">
-            <span style="color: whitesmoke;">
-              <!-- <i class="bi bi-github"></i> -->
-              <i class="fab fa-github"></i>
-            </span>
-          </a>
-        </big>
+        <div data-aos="flip-up" data-aos-offset="-50">
+          <big>
+            <a href="https://github.com/richeyphu/" target="_blank">
+              <span style="color: whitesmoke;">
+                <!-- <i class="bi bi-github"></i> -->
+                <i class="fab fa-github"></i>
+              </span>
+            </a>
+          </big>
+        </div>
       </div>
     </div>
 
@@ -128,12 +142,19 @@
   <!-- Footer section ends here -->
 
   <!-- JS -->
+  <!-- particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.js"></script>
   <script>
     var json = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/demo/particles.json"
     particlesJS.load('particles-js', json, function () {
       console.log('callback - particles.js config loaded');
     });
+  </script>
+
+  <!-- AOS lib -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
   </script>
 
   <script type="text/javascript">
@@ -149,6 +170,22 @@
         scrollTop: ($('#' + div).offset().top - 80)
       }, 1500);
     }
+  </script>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    jQuery(document).ready(function () {
+      $(function () {
+        $('#slideshow h1:gt(0)').hide();
+        setInterval(function () {
+          $('#slideshow :first-child').fadeOut(800)
+            .next('h1').fadeIn(800)
+            .end().appendTo('#slideshow');
+        },
+          4000);
+      });
+    });
   </script>
 
 </body>
