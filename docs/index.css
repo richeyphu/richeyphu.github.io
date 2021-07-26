@@ -29,12 +29,21 @@ body, html {
 }
 
 .slideshow-element {
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: auto;
+}
+
+.ft-button {
+    color: whitesmoke;
+    transition: color 0.3s ease-in-out;
+}
+
+.ft-button :hover {
+    color: grey;
 }
 
 #particles-js {
