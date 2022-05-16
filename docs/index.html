@@ -178,10 +178,6 @@
 
         <div class="mb-4 text-muted small">
           <div data-aos="zoom-in" data-aos-offset="-50">
-            <!-- <img
-              src="https://count.getloli.com/get/@richeyphugithubio?theme=rule34"
-              alt="visitor counter"
-            /> -->
             <span id="visits" class=""></span>
           </div>
         </div>
@@ -226,7 +222,23 @@
 
       // Vistors counter
       function getVisitors(response) {
-        document.getElementById("visits").innerText = response.value;
+        const visits = response.value;
+        const counters = [
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/0.gif">',
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/1.gif">',
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/2.gif">',
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/3.gif">',
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/4.gif">',
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/5.gif">',
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/6.gif">',
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/7.gif">',
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/8.gif">',
+          '<img src="https://raw.githubusercontent.com/journey-ad/Moe-counter/master/assets/theme/rule34/9.gif">',
+        ];
+        [...String(visits)].forEach((digit) => {
+          document.getElementById("visits").innerHTML += counters[digit];
+        });
+        // document.getElementById("visits").innerText = visits;
       }
     </script>
 
