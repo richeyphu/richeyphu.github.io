@@ -55,6 +55,12 @@
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- CountAPI -->
+    <script
+      async
+      src="https://api.countapi.xyz/hit/richeyphu.github.io/visits?callback=getVisitors"
+    ></script>
   </head>
 
   <body>
@@ -157,7 +163,7 @@
           </a>
         </div>
 
-        <div class="mt-3 mb-4">
+        <div class="mt-3 mb-3">
           <div data-aos="flip-up" data-aos-offset="-50">
             <big>
               <a href="https://github.com/richeyphu/" target="_blank">
@@ -170,12 +176,13 @@
           </div>
         </div>
 
-        <div class="mt-1 mb-4">
+        <div class="mb-4 text-muted small">
           <div data-aos="zoom-in" data-aos-offset="-50">
-            <img
+            <!-- <img
               src="https://count.getloli.com/get/@richeyphugithubio?theme=rule34"
               alt="visitor counter"
-            />
+            /> -->
+            <span id="visits" class=""></span>
           </div>
         </div>
       </div>
@@ -215,6 +222,11 @@
           },
           1500
         );
+      }
+
+      // Vistors counter
+      function getVisitors(response) {
+        document.getElementById("visits").innerText = response.value;
       }
     </script>
 
